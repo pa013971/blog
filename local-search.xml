@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>IIS 實現反向代理及架設 vue 站台</title>
+    <link href="/blog/2022/05/04/IIS%20%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%8F%8A%E6%9E%B6%E8%A8%AD%20vue%20%E7%AB%99%E5%8F%B0/"/>
+    <url>/blog/2022/05/04/IIS%20%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E5%8F%8A%E6%9E%B6%E8%A8%AD%20vue%20%E7%AB%99%E5%8F%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="IIS-實現反向代理及架設-vue-站台"><a href="#IIS-實現反向代理及架設-vue-站台" class="headerlink" title="IIS 實現反向代理及架設 vue 站台"></a>IIS 實現反向代理及架設 vue 站台</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>待補!</p><hr><h2 id="準備"><a href="#準備" class="headerlink" title="準備"></a>準備</h2><p>IIS</p><p>Application Request Routing<br>下載網址：<a href="https://www.iis.net/downloads/microsoft/application-request-routing">https://www.iis.net/downloads/microsoft/application-request-routing</a></p><p>URL Rewrite<br>下載網址：<a href="https://www.iis.net/downloads/microsoft/url-rewrite">https://www.iis.net/downloads/microsoft/url-rewrite</a></p><hr><h3 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h3><p><img src="/blog/%5Cimages%5C1651667908894_new.jpg%5C" alt="logo"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  
+</search>
