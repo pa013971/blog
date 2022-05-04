@@ -11,6 +11,22 @@
     <content type="html"><![CDATA[<h1 id="IIS-實現反向代理"><a href="#IIS-實現反向代理" class="headerlink" title="IIS 實現反向代理"></a>IIS 實現反向代理</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>反向代理（Reverse Proxy）方式是指以代理伺服器來接受internet上的連接請求，然後將請求轉發給內部網絡上的伺服器，並將從伺服器上得到的結果返回給internet上請求連接的客戶端，此時代理伺服器對外就表現為一個反向代理伺服器。</p><hr><h2 id="準備"><a href="#準備" class="headerlink" title="準備"></a>準備</h2><p>IIS</p><p>Application Request Routing<br>下載網址：<a href="https://www.iis.net/downloads/microsoft/application-request-routing">https://www.iis.net/downloads/microsoft/application-request-routing</a></p><p>URL Rewrite<br>下載網址：<a href="https://www.iis.net/downloads/microsoft/url-rewrite">https://www.iis.net/downloads/microsoft/url-rewrite</a></p><hr><h2 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h2><p>當下載並安裝完成後 IIS 會多出兩個功能<br><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651667908894_new.jpg" alt="準備完成樣子"></p><p>第一步、啟動代理<br><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651667908894_1.jpg" alt="點擊設置"></p><p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668036918_2.jpg" alt="點擊反向代理設定"></p><p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668062343_3.jpg" alt="將反向代理開啟"></p><p>第二步、新增反向代理，設置 URL 規則</p><p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_1.jpg" alt="點擊站台設定URL Rewrite"></p><p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_2.jpg" alt="新增規則 / 空白規則"></p><p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_3.jpg" alt="設定並套用"></p><p>設置完畢即完成</p>]]></content>
     
     
+    <categories>
+      
+      <category>MIS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Reverse Proxy</tag>
+      
+      <tag>IIS</tag>
+      
+      <tag>URL Rewrite</tag>
+      
+    </tags>
     
   </entry>
   
