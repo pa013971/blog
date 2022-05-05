@@ -22,11 +22,11 @@
       
       <tag>IIS</tag>
       
+      <tag>URL Rewrite</tag>
+      
       <tag>Vue Router</tag>
       
       <tag>web.config</tag>
-      
-      <tag>URL Rewrite</tag>
       
     </tags>
     
@@ -51,11 +51,11 @@
     
     <tags>
       
+      <tag>Reverse Proxy</tag>
+      
       <tag>IIS</tag>
       
       <tag>URL Rewrite</tag>
-      
-      <tag>Reverse Proxy</tag>
       
     </tags>
     
