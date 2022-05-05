@@ -220,12 +220,12 @@ web_analytics:  # 网页访问统计
   # Google 统计的 Tracking ID
   # Google analytics, set Tracking ID
   # See: https://developers.google.com/analytics/devguides/collection/analyticsjs
-  google: 3544442418
+  google: G-RMEY7HCZWR
 
   # Google gtag.js 的媒体资源 ID
   # Google gtag.js GA_MEASUREMENT_ID
   # See: https://developers.google.com/analytics/devguides/collection/gtagjs/
-  gtag:
+  gtag: G-RMEY7HCZWR
 
   # 腾讯统计的 H5 App ID，开启高级功能才有cid
   # Tencent analytics, set APP ID
