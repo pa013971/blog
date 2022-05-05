@@ -4,6 +4,7 @@ tags:
   - IIS
   - Vue Router
   - web.config
+  - URL Rewrite
 categories:
   - DevOps
 date: 2022-05-05 15:34:00
@@ -74,14 +75,13 @@ npm run build
 
 ![新增網站](1651734577669_3.jpg)
 
-實體路徑需指定到佈署產生的 dist 資料夾
+實體路徑需指定到佈署產生的 dist 資
 
 如果沒有domain主機名稱可為空
 
 設定完成後，即可測試 vue 站台是否架設成功
 
-### Thank you! :smile: 
-
+### Thank you! :smile:
 ---
 
 參考
