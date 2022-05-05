@@ -16,30 +16,26 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <meta name="description" content="IIS 實現反向代理前言反向代理（Reverse Proxy）方式是指以代理伺服器來接受internet上的連接請求，然後將請求轉發給內部網絡上的伺服器，並將從伺服器上得到的結果返回給internet上請求連接的客戶端，此時代理伺服器對外就表現為一個反向代理伺服器。  準備IIS Application Request Routing下載網址：https:&#x2F;&#x2F;www.iis.net&#x2F;downloa">
+  <meta name="description" content="IIS 架設 vue 站台前言待補!  準備IIS URL Rewrite下載網址：https:&#x2F;&#x2F;www.iis.net&#x2F;downloads&#x2F;microsoft&#x2F;url-rewrite 安裝完畢後在進行下一步  開始第一步 建立web.config為了讓 IIS 能夠配置 vue-router我們需要一份 web.config 官方範例 Vue Router 123456789101112131">
 <meta property="og:type" content="article">
-<meta property="og:title" content="IIS 實現反向代理">
-<meta property="og:url" content="https://pa013971.github.io/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/index.html">
+<meta property="og:title" content="IIS 架設 VUE 站台">
+<meta property="og:url" content="https://pa013971.github.io/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/index.html">
 <meta property="og:site_name" content="劉厔穎｜Alan Liu">
-<meta property="og:description" content="IIS 實現反向代理前言反向代理（Reverse Proxy）方式是指以代理伺服器來接受internet上的連接請求，然後將請求轉發給內部網絡上的伺服器，並將從伺服器上得到的結果返回給internet上請求連接的客戶端，此時代理伺服器對外就表現為一個反向代理伺服器。  準備IIS Application Request Routing下載網址：https:&#x2F;&#x2F;www.iis.net&#x2F;downloa">
+<meta property="og:description" content="IIS 架設 vue 站台前言待補!  準備IIS URL Rewrite下載網址：https:&#x2F;&#x2F;www.iis.net&#x2F;downloads&#x2F;microsoft&#x2F;url-rewrite 安裝完畢後在進行下一步  開始第一步 建立web.config為了讓 IIS 能夠配置 vue-router我們需要一份 web.config 官方範例 Vue Router 123456789101112131">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651667908894_new.jpg">
-<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651667908894_1.jpg">
-<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668036918_2.jpg">
-<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668062343_3.jpg">
-<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_1.jpg">
-<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_2.jpg">
-<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_3.jpg">
-<meta property="article:published_time" content="2022-05-04T12:02:00.000Z">
-<meta property="article:modified_time" content="2022-05-05T06:09:20.180Z">
+<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_1.jpg">
+<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_2.jpg">
+<meta property="og:image" content="https://pa013971.github.io/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_3.jpg">
+<meta property="article:published_time" content="2022-05-05T07:34:00.000Z">
+<meta property="article:modified_time" content="2022-05-05T07:37:41.400Z">
 <meta property="article:author" content="John Doe">
-<meta property="article:tag" content="Reverse Proxy">
 <meta property="article:tag" content="IIS">
-<meta property="article:tag" content="URL Rewrite">
+<meta property="article:tag" content="Vue Router">
+<meta property="article:tag" content="web.config">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://pa013971.github.io/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651667908894_new.jpg">
+<meta name="twitter:image" content="https://pa013971.github.io/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_1.jpg">
   
-  <title>IIS 實現反向代理 - 劉厔穎｜Alan Liu</title>
+  <title>IIS 架設 VUE 站台 - 劉厔穎｜Alan Liu</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -185,7 +181,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="IIS 實現反向代理">
+            <span class="h2" id="subtitle" title="IIS 架設 VUE 站台">
               
             </span>
 
@@ -195,8 +191,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-04 20:02" pubdate>
-        2022年5月4日 晚上
+      <time datetime="2022-05-05 15:34" pubdate>
+        2022年5月5日 下午
       </time>
     </span>
   
@@ -206,7 +202,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      353 字
+      1.1k 字
     </span>
   
 
@@ -215,7 +211,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1 分钟
+      3 分钟
     </span>
   
 
@@ -244,24 +240,34 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">IIS 實現反向代理</h1>
+            <h1 style="display: none">IIS 架設 VUE 站台</h1>
             
             <div class="markdown-body">
-              <h1 id="IIS-實現反向代理"><a href="#IIS-實現反向代理" class="headerlink" title="IIS 實現反向代理"></a>IIS 實現反向代理</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>反向代理（Reverse Proxy）方式是指以代理伺服器來接受internet上的連接請求，然後將請求轉發給內部網絡上的伺服器，並將從伺服器上得到的結果返回給internet上請求連接的客戶端，此時代理伺服器對外就表現為一個反向代理伺服器。</p>
+              <h1 id="IIS-架設-vue-站台"><a href="#IIS-架設-vue-站台" class="headerlink" title="IIS 架設 vue 站台"></a>IIS 架設 vue 站台</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>待補!</p>
 <hr>
 <h2 id="準備"><a href="#準備" class="headerlink" title="準備"></a>準備</h2><p>IIS</p>
-<p>Application Request Routing<br>下載網址：<a target="_blank" rel="noopener" href="https://www.iis.net/downloads/microsoft/application-request-routing">https://www.iis.net/downloads/microsoft/application-request-routing</a></p>
 <p>URL Rewrite<br>下載網址：<a target="_blank" rel="noopener" href="https://www.iis.net/downloads/microsoft/url-rewrite">https://www.iis.net/downloads/microsoft/url-rewrite</a></p>
+<p><em>安裝完畢後在進行下一步</em></p>
 <hr>
-<h2 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h2><p>當下載並安裝完成後 IIS 會多出兩個功能<br><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651667908894_new.jpg" srcset="/blog/img/loading.gif" lazyload alt="準備完成樣子"></p>
-<p>第一步、啟動代理<br><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651667908894_1.jpg" srcset="/blog/img/loading.gif" lazyload alt="點擊設置"></p>
-<p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668036918_2.jpg" srcset="/blog/img/loading.gif" lazyload alt="點擊反向代理設定"></p>
-<p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668062343_3.jpg" srcset="/blog/img/loading.gif" lazyload alt="將反向代理開啟"></p>
-<p>第二步、新增反向代理，設置 URL 規則</p>
-<p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_1.jpg" srcset="/blog/img/loading.gif" lazyload alt="點擊站台設定URL Rewrite"></p>
-<p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_2.jpg" srcset="/blog/img/loading.gif" lazyload alt="新增規則 / 空白規則"></p>
-<p><img src="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/1651668152705_3.jpg" srcset="/blog/img/loading.gif" lazyload alt="設定並套用"></p>
-<p>設置完畢即完成</p>
+<h2 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h2><h3 id="第一步-建立web-config"><a href="#第一步-建立web-config" class="headerlink" title="第一步 建立web.config"></a>第一步 建立web.config</h3><p>為了讓 IIS 能夠配置 vue-router<br>我們需要一份 web.config</p>
+<p>官方範例 <a target="_blank" rel="noopener" href="https://router.vuejs.org/guide/essentials/history-mode.html#internet-information-services-iis">Vue Router</a></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">system.webServer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">rewrite</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">rules</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">rule</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Handle History Mode and custom 404/500&quot;</span> <span class="hljs-attr">stopProcessing</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">match</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;(.*)&quot;</span> /&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">conditions</span> <span class="hljs-attr">logicalGrouping</span>=<span class="hljs-string">&quot;MatchAll&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">add</span> <span class="hljs-attr">input</span>=<span class="hljs-string">&quot;&#123;REQUEST_FILENAME&#125;&quot;</span> <span class="hljs-attr">matchType</span>=<span class="hljs-string">&quot;IsFile&quot;</span> <span class="hljs-attr">negate</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">add</span> <span class="hljs-attr">input</span>=<span class="hljs-string">&quot;&#123;REQUEST_FILENAME&#125;&quot;</span> <span class="hljs-attr">matchType</span>=<span class="hljs-string">&quot;IsDirectory&quot;</span> <span class="hljs-attr">negate</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">conditions</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;Rewrite&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">rule</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">rules</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">rewrite</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">system.webServer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<p>並將此檔案儲存至 vue.js 專案的 public 底下<br>這樣一來，每次建置的時候就會自動將 web.config 產生至 dist 資料夾</p>
+<p><img src="/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_1.jpg" srcset="/blog/img/loading.gif" lazyload alt="web.config 存至 public 底下"></p>
+<h3 id="第二步-建置專案"><a href="#第二步-建置專案" class="headerlink" title="第二步 建置專案"></a>第二步 建置專案</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs npm">npm run build<br></code></pre></td></tr></table></figure>
+
+<p><img src="/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_2.jpg" srcset="/blog/img/loading.gif" lazyload alt="建置完成範例圖"></p>
+<h3 id="第三步-設定-IIS"><a href="#第三步-設定-IIS" class="headerlink" title="第三步 設定 IIS"></a>第三步 設定 IIS</h3><p><img src="/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_3.jpg" srcset="/blog/img/loading.gif" lazyload alt="新增網站"></p>
+<p>實體路徑需指定到佈署產生的 dist 資料夾</p>
+<p>如果沒有domain主機名稱可為空</p>
+<p>設定完成後，即可測試 vue 站台是否架設成功</p>
+<h3 id="Thank-you-smile"><a href="#Thank-you-smile" class="headerlink" title="Thank you! :smile:"></a>Thank you! :smile:</h3><hr>
+<p>參考</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://router.vuejs.org/guide/essentials/history-mode.html">Vue Router</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.linkedin.com/pulse/hosting-vue-js-spa-build-microsoft-iis-zainul-zain">Hosting Vue JS SPA build on Microsoft IIS</a></li>
+</ul>
 
             </div>
             <hr>
@@ -279,11 +285,11 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/blog/tags/Reverse-Proxy/">Reverse Proxy</a>
-                    
                       <a class="hover-with-bg" href="/blog/tags/IIS/">IIS</a>
                     
-                      <a class="hover-with-bg" href="/blog/tags/URL-Rewrite/">URL Rewrite</a>
+                      <a class="hover-with-bg" href="/blog/tags/Vue-Router/">Vue Router</a>
+                    
+                      <a class="hover-with-bg" href="/blog/tags/web-config/">web.config</a>
                     
                   </div>
                 
@@ -294,15 +300,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">IIS 架設 VUE 站台</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/">
+                        <span class="hidden-mobile">IIS 實現反向代理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>

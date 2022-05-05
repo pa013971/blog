@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>IIS 架設 VUE 站台</title>
+    <link href="/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/"/>
+    <url>/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="IIS-架設-vue-站台"><a href="#IIS-架設-vue-站台" class="headerlink" title="IIS 架設 vue 站台"></a>IIS 架設 vue 站台</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>待補!</p><hr><h2 id="準備"><a href="#準備" class="headerlink" title="準備"></a>準備</h2><p>IIS</p><p>URL Rewrite<br>下載網址：<a href="https://www.iis.net/downloads/microsoft/url-rewrite">https://www.iis.net/downloads/microsoft/url-rewrite</a></p><p><em>安裝完畢後在進行下一步</em></p><hr><h2 id="開始"><a href="#開始" class="headerlink" title="開始"></a>開始</h2><h3 id="第一步-建立web-config"><a href="#第一步-建立web-config" class="headerlink" title="第一步 建立web.config"></a>第一步 建立web.config</h3><p>為了讓 IIS 能夠配置 vue-router<br>我們需要一份 web.config</p><p>官方範例 <a href="https://router.vuejs.org/guide/essentials/history-mode.html#internet-information-services-iis">Vue Router</a></p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-meta">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">system.webServer</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">rewrite</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">rules</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">rule</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;Handle History Mode and custom 404/500&quot;</span> <span class="hljs-attr">stopProcessing</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">match</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;(.*)&quot;</span> /&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">conditions</span> <span class="hljs-attr">logicalGrouping</span>=<span class="hljs-string">&quot;MatchAll&quot;</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">add</span> <span class="hljs-attr">input</span>=<span class="hljs-string">&quot;&#123;REQUEST_FILENAME&#125;&quot;</span> <span class="hljs-attr">matchType</span>=<span class="hljs-string">&quot;IsFile&quot;</span> <span class="hljs-attr">negate</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">add</span> <span class="hljs-attr">input</span>=<span class="hljs-string">&quot;&#123;REQUEST_FILENAME&#125;&quot;</span> <span class="hljs-attr">matchType</span>=<span class="hljs-string">&quot;IsDirectory&quot;</span> <span class="hljs-attr">negate</span>=<span class="hljs-string">&quot;true&quot;</span> /&gt;</span><br>          <span class="hljs-tag">&lt;/<span class="hljs-name">conditions</span>&gt;</span><br>          <span class="hljs-tag">&lt;<span class="hljs-name">action</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;Rewrite&quot;</span> <span class="hljs-attr">url</span>=<span class="hljs-string">&quot;/&quot;</span> /&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">rule</span>&gt;</span><br>      <span class="hljs-tag">&lt;/<span class="hljs-name">rules</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">rewrite</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">system.webServer</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span><br></code></pre></td></tr></table></figure><p>並將此檔案儲存至 vue.js 專案的 public 底下<br>這樣一來，每次建置的時候就會自動將 web.config 產生至 dist 資料夾</p><p><img src="/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_1.jpg" alt="web.config 存至 public 底下"></p><h3 id="第二步-建置專案"><a href="#第二步-建置專案" class="headerlink" title="第二步 建置專案"></a>第二步 建置專案</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs npm">npm run build<br></code></pre></td></tr></table></figure><p><img src="/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_2.jpg" alt="建置完成範例圖"></p><h3 id="第三步-設定-IIS"><a href="#第三步-設定-IIS" class="headerlink" title="第三步 設定 IIS"></a>第三步 設定 IIS</h3><p><img src="/blog/2022/05/05/IIS%E6%9E%B6%E8%A8%ADVUE%E7%AB%99%E5%8F%B0/1651734577669_3.jpg" alt="新增網站"></p><p>實體路徑需指定到佈署產生的 dist 資料夾</p><p>如果沒有domain主機名稱可為空</p><p>設定完成後，即可測試 vue 站台是否架設成功</p><h3 id="Thank-you-smile"><a href="#Thank-you-smile" class="headerlink" title="Thank you! :smile:"></a>Thank you! :smile:</h3><hr><p>參考</p><ul><li><a href="https://router.vuejs.org/guide/essentials/history-mode.html">Vue Router</a></li><li><a href="https://www.linkedin.com/pulse/hosting-vue-js-spa-build-microsoft-iis-zainul-zain">Hosting Vue JS SPA build on Microsoft IIS</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>DevOps</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>IIS</tag>
+      
+      <tag>Vue Router</tag>
+      
+      <tag>web.config</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>IIS 實現反向代理</title>
     <link href="/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
     <url>/blog/2022/05/04/IIS%E5%AF%A6%E7%8F%BE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</url>
