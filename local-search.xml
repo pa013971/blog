@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>logrotate 基本配置</title>
+    <link href="/blog/2022/05/19/logrotate-%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/"/>
+    <url>/blog/2022/05/19/logrotate-%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="logrotate-基本配置"><a href="#logrotate-基本配置" class="headerlink" title="logrotate 基本配置"></a>logrotate 基本配置</h1><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>使用 Linux 內建的 logrotate 工具，定期清空和壓縮 Log 檔案。<br>Log 沒有做 rotate ，Log 檔案將會不斷成長到撐爆空間。</p><h3 id="第一步、-移動到-Logrotate-d-資料夾"><a href="#第一步、-移動到-Logrotate-d-資料夾" class="headerlink" title="第一步、 移動到 Logrotate.d 資料夾"></a>第一步、 移動到 Logrotate.d 資料夾</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Linux">cd /etc/logrotate.d<br></code></pre></td></tr></tbody></table></figure><h3 id="第二步、-建立檔案"><a href="#第二步、-建立檔案" class="headerlink" title="第二步、 建立檔案"></a>第二步、 建立檔案</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Linux">sudo vi **project_name**<br></code></pre></td></tr></tbody></table></figure><ul><li><strong>project_name</strong> 請填入專案名稱，方便辨識</li></ul><h3 id="第三步、-填入設定"><a href="#第三步、-填入設定" class="headerlink" title="第三步、 填入設定"></a>第三步、 填入設定</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs logrotate">/home/**user_name**/**project_name**/*.log {<br>    daily <br>    dateext<br>    missingok<br>    rotate 30<br>    notifempty<br>    copytruncate<br>}<br></code></pre></td></tr></tbody></table></figure><ul><li><p><strong>user_name</strong> 請填入使用者名稱</p></li><li><p><strong>project_name</strong> 請填入專案名稱</p></li><li><p>daily 表示每天整理，也可以改成 weekly 或 monthly</p></li><li><p>dateext 表示檔案補上 rotate 的日期  |  EX: xxx.log-%Y%m%d</p></li><li><p>missingok 表示如果找不到 log 檔也沒關系</p></li><li><p>rotate 30 表示保留最近 30 份</p></li><li><p>compress 表示壓縮起來，預設用 gzip  |  EX: xxx.log-%Y%m%d.tar.gz</p></li><li><p>delaycompress 表示延後壓縮直到下一次 rotate</p></li><li><p>notifempty 表示如果 log 檔是空的，就不 rotate</p></li><li><p>copytruncate 先複製 log 檔的內容後，在清空</p></li></ul><h3 id="第四步、-立即執行設定"><a href="#第四步、-立即執行設定" class="headerlink" title="第四步、 立即執行設定"></a>第四步、 立即執行設定</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs Linux">sudo /usr/sbin/logrotate -v /etc/logrotate.conf<br></code></pre></td></tr></tbody></table></figure><h3 id="Thank-you-smile"><a href="#Thank-you-smile" class="headerlink" title="Thank you! :smile:"></a>Thank you! <span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h3><hr><p>參考</p><ul><li><a href="https://www.tecmint.com/install-logrotate-to-manage-log-rotation-in-linux/">How to Setup and Manage Log Rotation Using Logrotate in Linux</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>logrotate</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>log</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Nginx 常用配置</title>
     <link href="/blog/2022/05/06/Nginx%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
     <url>/blog/2022/05/06/Nginx%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/</url>
