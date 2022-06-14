@@ -5,7 +5,8 @@ tags:
   - CSR
   - NAME.COM
 categories:
-  - SSL
+  - DevOps
+  - ''
 date: 2022-06-13 11:48:00
 ---
 # 更新憑證#1 NAME.COM SSL 憑證更新
