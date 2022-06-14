@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>AWS Certificate Manager 匯入憑證</title>
+    <link href="/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/"/>
+    <url>/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/</url>
+    
+    <content type="html"><![CDATA[<h1 id="更新憑證-2-AWS-Certificate-Manager-匯入憑證"><a href="#更新憑證-2-AWS-Certificate-Manager-匯入憑證" class="headerlink" title="更新憑證#2 AWS Certificate Manager 匯入憑證"></a>更新憑證#2 AWS Certificate Manager 匯入憑證</h1><h3 id="匯入憑證"><a href="#匯入憑證" class="headerlink" title="匯入憑證"></a>匯入憑證</h3><p>進到 AWS Certificate Manager 點選匯入憑證</p><p><img src="/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/1655192633804.jpg" alt="AWS Certificate Manager頁面"></p><p>將前一篇 <a href="https://pa013971.github.io/blog/2022/06/13/NAME.COM%E5%BB%BA%E7%AB%8B%E6%86%91%E8%AD%89/">NAME.COM SSL 憑證</a> 得到的憑證填入表格中</p><p><img src="/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/1655197062093.jpg" alt="憑證詳細資訊"></p><p>憑證內文為 NAME.COM 的 SERVER CERTIFICATE</p><p><img src="/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/1655198650080.jpg" alt="SERVER CERTIFICATE"></p><p>憑證私有金鑰為 openssl 產出來的 Key</p><p><img src="/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/1655198688389.jpg" alt="openssl private key"></p><p>憑證鏈為 NAME.COM 的 CA CERTIFICATES</p><p><img src="/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/1655198667714.jpg" alt="CA CERTIFICATES"></p><p>內文都填入後即可看到此憑證的到期時間</p><p><img src="/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/1655198974266.jpg" alt="憑證資訊"></p><p>再將憑證綁定於其他 AWS 的功能 </p><p><img src="/blog/2022/06/14/AWSCertificateManager%E5%8C%AF%E5%85%A5SSL%E6%86%91%E8%AD%89/1655200003246.jpg" alt="負載平衡SSL綁定範例"></p><p>這樣就大功告成囉!</p><h3 id="Thank-you-smile"><a href="#Thank-you-smile" class="headerlink" title="Thank you! :smile:"></a>Thank you! <span class="github-emoji"><span>😄</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f604.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>DevOps</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>SSL</tag>
+      
+      <tag>AWS Certificate Manager</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>NAME.COM建立憑證</title>
     <link href="/blog/2022/06/13/NAME.COM%E5%BB%BA%E7%AB%8B%E6%86%91%E8%AD%89/"/>
     <url>/blog/2022/06/13/NAME.COM%E5%BB%BA%E7%AB%8B%E6%86%91%E8%AD%89/</url>
@@ -13,7 +40,7 @@
     
     <categories>
       
-      <category>SSL</category>
+      <category>DevOps</category>
       
     </categories>
     
